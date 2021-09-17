@@ -8,7 +8,7 @@ public class MoodAnalyser {
     private String message;
 
     public  MoodAnalyser(){
-    //default constructor
+        //default constructor
     }
 
     public MoodAnalyser(String message){
@@ -21,12 +21,5 @@ public class MoodAnalyser {
         } else {
             return "SAD";
         }
-    }
-}
-
-//exception class
-class MoodAnalyserException extends Exception{
-    public MoodAnalyserException(String message){
-        super(message);
     }
 }
