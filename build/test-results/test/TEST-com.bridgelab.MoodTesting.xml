@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelab.MoodTesting" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-17T06:15:02" hostname="DESKTOP-2I0J1B5" time="0.018">
-  <properties/>
-  <testcase name="givingNullMessage()" classname="com.bridgelab.MoodTesting" time="0.018"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
