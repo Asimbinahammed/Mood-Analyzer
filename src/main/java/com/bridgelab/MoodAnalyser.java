@@ -3,23 +3,26 @@
  */
 
 package com.bridgelab;
-
 public class MoodAnalyser {
     private String message;
 
-    public  MoodAnalyser(){
-        //default constructor
+    public MoodAnalyser() {
     }
 
-    public MoodAnalyser(String message){
-        this.message=message; //parameter constructor
+    public MoodAnalyser(String message) {
+        this .message = message;
     }
 
     public String analyseMood(String message) {
-        if (message.isEmpty()) {
+        try {
+            if (message.contains("I am in Sad Mood")) {
+                return "SAD";
+            }
+            else {
+                return "HAPPY";
+            }
+        }catch(NullPointerException e) {
             return "HAPPY";
-        } else {
-            return "SAD";
         }
     }
 }

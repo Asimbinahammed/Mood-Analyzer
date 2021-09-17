@@ -29,4 +29,11 @@ public class MoodTesting {
         Assertions.assertEquals("HAPPY", mood);
     }
 
+    @Test
+    public void givingNullMessage() {
+        MoodAnalyser analyser = new MoodAnalyser();
+        String mood = analyser.analyseMood(null);
+        Assertions.assertEquals("HAPPY", mood);
+    }
+
 }
