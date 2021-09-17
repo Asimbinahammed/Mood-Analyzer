@@ -17,7 +17,15 @@ public class MoodTesting {
     @Test
     public void givingHappyMessage() {
         MoodAnalyser analyser = new MoodAnalyser();
-        String mood = analyser.analyseMood("Iam in any mood");
+        String mood = analyser.analyseMood("Iam in HAPPY mood");
+        Assertions.assertEquals("HAPPY", mood);
+    }
+
+    //giving no parameters
+    @Test
+    public void givingNoMessage() {
+        MoodAnalyser analyser = new MoodAnalyser();
+        String mood = analyser.analyseMood("");
         Assertions.assertEquals("HAPPY", mood);
     }
 

@@ -5,11 +5,21 @@
 package com.bridgelab;
 
 public class MoodAnalyser {
+    private String message;
+
+    public  MoodAnalyser(){
+    //default constructor
+    }
+
+    public MoodAnalyser(String message){
+        this.message=message; //parameter constructor
+    }
+
     public String analyseMood(String message) {
-        if (message.contains("sad")) {
-            return "SAD";
-        } else {
+        if (message.isEmpty()) {
             return "HAPPY";
+        } else {
+            return "SAD";
         }
     }
 }
