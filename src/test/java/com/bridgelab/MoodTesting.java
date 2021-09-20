@@ -1,29 +1,46 @@
 package com.bridgelab;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.AssertionsKt;
 import org.junit.jupiter.api.Test;
 
 class MoodAnalyserTest {
+
     @Test
     public void givenSadWhileAnalysisMoodShouldReturnSad() {
-        MoodAnalyser MoodAnalyser = new MoodAnalyser("I am in Sad Mood");
-        String result = MoodAnalyser.analyseMood();
-        Assertions.assertEquals("SAD", result);
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Sad Mood");
+        try {
+            Assertions.assertEquals("SAD",moodAnalyzer.analyseMood());
+        } catch (MoodAnalyzerException e) {
+        }
     }
 
     @Test
     public void givenHappyWhileAnalysisMoodShouldReturnHappy() {
-        MoodAnalyser MoodAnalyser = new MoodAnalyser("I am in Happy Mood");
-        String result = MoodAnalyser.analyseMood();
-        Assertions.assertEquals("HAPPY", result);
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Happy Mood");
+        try {
+            Assertions.assertEquals("HAPPY",moodAnalyzer.analyseMood());
+        } catch (MoodAnalyzerException e) {
+        }
     }
 
     @Test
     public void givenNullWhileAnalysisMoodShouldReturnHappy() {
-        MoodAnalyser MoodAnalyser = new MoodAnalyser(null);
-        String result = MoodAnalyser.analyseMood();
-        Assertions.assertEquals("HAPPY", result);
+        MoodAnalyser moodAnalyzer = new MoodAnalyser(null);
+        try {
+            moodAnalyzer.analyseMood();
+        } catch (MoodAnalyzerException e) {
+            Assertions.assertEquals(MoodAnalyzerException.ExceptionType.ENTERED_NULL, e.getType());
+        }
+    }
+
+    @Test
+    public void givenEmptyWhileAnalysisMoodShouldReturnHappy() {
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("");
+        try {
+            moodAnalyzer.analyseMood();
+        } catch (MoodAnalyzerException e) {
+            Assertions.assertEquals(MoodAnalyzerException.ExceptionType.ENTERED_EMPTY, e.getType());
+        }
     }
 
 }
